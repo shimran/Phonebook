@@ -1,5 +1,5 @@
 class Phone
-	
+
 	@@phones = []
 
 	define_method(:initialize) do |name, type, phone_number|
@@ -13,7 +13,7 @@ class Phone
 	end
 
 	define_method(:name) do
-		@name	
+		@name
 	end
 
 	define_method(:type) do
@@ -47,17 +47,18 @@ class Phone
 		end
 		found_type
 	end
-		define_singleton_method(:find_number) do |search_for_number|
+
+	define_singleton_method(:find_number) do |search_for_number|
 		found_number	=	nil
 		@@phones.each() do |phone|
-			if phone.phone_number() == search_for_name
+			if phone.phone_number() == search_for_number
 				found_number = phone
 			end
 		end
 		found_number
 	end
 
-	define_singleton_method(:clear) do 
+	define_singleton_method(:clear) do
 		@@phones = []
 	end
 
