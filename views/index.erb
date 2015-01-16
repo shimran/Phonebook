@@ -1,0 +1,15 @@
+<h1>Contacts</h1>
+
+<h3>Add a contact here:</h3>
+
+<form action="/contacts" method="post">
+  <label for='contact_name'>Name of Contact:</label>
+  <input id='contact_name' name='contact_name' type='text'>
+  <button type="submit">Add Contact</button>
+</form>
+
+<ul>
+  <% @contacts.each() do |contact| %>
+    <li><a href="/contacts/<%= contact.id() %>"><%= contact.contact_name() %></a></li>
+  <% end %>
+</ul>
