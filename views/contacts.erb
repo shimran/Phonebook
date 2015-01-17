@@ -1,0 +1,26 @@
+<h1>Add additional phone numbers <%= @contact.contact_name() %> </h1>
+
+<form action="/phone" method="post">
+  <input id='contact_id' name='contact_id' type='hidden' value='<%= @contact.id() %>'>
+
+  <label for='name'>Contact's name:</label>
+  <input id='name' name='name' type='text'>
+
+  <label for='type'>Type:</label>
+  <input id='type' name='type' type='text'>
+
+  <label for='phone_number'>Phone Number:</label>
+  <input id='phone_number' Phone Number='phone_number' Phone Number='text'>
+
+  <button type="submit">Add Contact</button>
+</form>
+
+<h3>Here are all the albums for this contact:</h3>
+
+<ul>
+  <% @contact.phone_lists().each() do |phone_list| %>
+    <li><%= phone_lust.name() %>: <i><%= phone_list.type() %><i><%= phone_list.phone_number() %></i></a></li>
+  <% end %>
+</ul>
+
+<a href="/">Return to Main Page</a>

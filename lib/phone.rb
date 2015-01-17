@@ -6,6 +6,7 @@ class Phone
 		@name	=	name
 		@type = type
 		@phone_number = phone_number
+		@id = @@cds.length().+(1)
 	end
 
 	define_method(:phone_number) do
@@ -19,6 +20,10 @@ class Phone
 	define_method(:type) do
 		@type
 	end
+
+	define_method(:id) do
+    @id
+  end
 
 	define_method(:save) do
 		@@phones.push(self)

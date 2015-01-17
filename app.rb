@@ -13,27 +13,27 @@
   post('/contacts') do
     contact_name = params.fetch('contact_name')
     Contacts.new(contact_name).save()
-    @contact = Contacts.all()
+    @contacts = Contacts.all()
     erb(:index)
   end
 
-  post('/cds') do
+  post('/phone') do
     name = params.fetch('name')
     type = params.fetch('type')
     phone_number= params.fetch('phone_number')
-    @cd = Phone.new(name,type,phone_number)
-    @cd.save()
-    @artist = Artist.find(params.fetch('artist_id').to_i())
-    @artist.add_album(@cd)
-    erb(:artist)
+    @phone = Phone.new(name,type,phone_number)
+    @phone.save()
+    @contact = Contacts.find_contact(params.fetch('contact_id').to_i())
+    @contact.add_phone_lists(@phone)
+    erb(:contacts)
   end
 
-  get('/cds/:id') do
-    @cd = CD.find(params.fetch('id'))
-    erb(:cd)
+  get('/phone/:id') do
+    @cd = Phone.find(params.fetch('id'))
+    erb(:phone)
   end
 
-  get('/artists/:id') do
-    @artist = Artist.find(params.fetch('id').to_i())
-    erb(:artist)
+  get('/contacts/:id') do
+    @contacts = Contacts.find_contact(params.fetch('id').to_i())
+    erb(:contacts)
   end
