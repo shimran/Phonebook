@@ -19,7 +19,8 @@ describe(Contacts) do
 	describe("#save") do
 	 it("pushes a new contact into the contacts list")	do
 	  new_contact = Contacts.new("Richard Rethemeyer")
-	  expect(new_contact.save()).to(eq([new_contact]))
+		new_contact.save()
+		expect(Contacts.all()).to(eq([new_contact]))
 	 end
 	end
 
@@ -27,7 +28,7 @@ describe(Contacts) do
 	 it("will search to the class 'Contacts' to return a contact")do
 	  look_for_contact=Contacts.new(["Richard Rethemeyer"])
 	  look_for_contact.save()
-	  expect(Contacts.find_contact(look_for_contact.contact_name())).to(eq(look_for_contact))
+	  expect(Contacts.find_contact(look_for_contact.id())).to(eq(look_for_contact))
 	 end
 	end
 

@@ -4,18 +4,14 @@ NOTES:
 
 Written in Ruby.
 
-
-Known Bugs:
-
-Currently, the phone book can store a contact but cannot add to the contact. 
-
-
 Future Functionality:
 
-This program has code and is spec'd for being able to search via type, name and phone number. 
+This program has code and is spec'd for being able to search via type, name and phone number.
 This functionality is not reflected in the Sinatra app, however, and will be added at a later date.
 
+Furthermore, additional CRUD functionality will be added to allow users to update and delete entries as they see fit.
 
+Additional CSS/HTML style elements will be added as well. 
 
 Created by Shimran George
 shimranbgeorge@gmail.com

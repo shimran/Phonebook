@@ -10,16 +10,18 @@
   <input id='type' name='type' type='text'>
 
   <label for='phone_number'>Phone Number:</label>
-  <input id='phone_number' Phone Number='phone_number' Phone Number='text'>
+  <input id='phone_number' name='phone_number' type='text'>
+
 
   <button type="submit">Add Contact</button>
 </form>
 
-<h3>Here are all the albums for this contact:</h3>
+<h3>Here are all the contacts for this contact:</h3>
 
 <ul>
   <% @contact.phone_lists().each() do |phone_list| %>
-    <li><%= phone_lust.name() %>: <i><%= phone_list.type() %><i><%= phone_list.phone_number() %></i></a></li>
+    <li><%= phone_list.name() %>:
+       <i><%= phone_list.type() %><i>  <bold><%= phone_list.phone_number() %></bold></a></li>
   <% end %>
 </ul>
 

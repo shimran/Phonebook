@@ -6,7 +6,7 @@ class Phone
 		@name	=	name
 		@type = type
 		@phone_number = phone_number
-		@id = @@cds.length().+(1)
+		@id = @@phones.length().+(1)
 	end
 
 	define_method(:phone_number) do
@@ -53,14 +53,14 @@ class Phone
 		found_type
 	end
 
-	define_singleton_method(:find_number) do |search_for_number|
-		found_number	=	nil
+	define_singleton_method(:find_number) do |search_for_phone_number|
+		found_phone_number	=	nil
 		@@phones.each() do |phone|
-			if phone.phone_number() == search_for_number
-				found_number = phone
+			if phone.phone_number() == search_for_phone_number
+				found_phone_number = phone
 			end
 		end
-		found_number
+		found_phone_number
 	end
 
 	define_singleton_method(:clear) do
