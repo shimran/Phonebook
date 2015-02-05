@@ -1,16 +1,16 @@
 require('rspec')
-require('contacts')
+require('contact')
 require('phone')
 require('pry')
 
-describe(Contacts) do
+describe(Contact) do
 	 before() do
-  	Contacts.clear()
+  	Contact.clear()
    end
 
 	describe(:contact_name) do
 	 it("returns the name of the contact") do
-	  new_contact = Contacts.new("Richard Rethemeyer")
+	  new_contact = Contact.new("Richard Rethemeyer")
 	  new_contact.save()
 	  expect(new_contact.contact_name()).to(eq("Richard Rethemeyer"))
 	 end
@@ -18,31 +18,31 @@ describe(Contacts) do
 
 	describe("#save") do
 	 it("pushes a new contact into the contacts list")	do
-	  new_contact = Contacts.new("Richard Rethemeyer")
+	  new_contact = Contact.new("Richard Rethemeyer")
 		new_contact.save()
-		expect(Contacts.all()).to(eq([new_contact]))
+		expect(Contact.all()).to(eq([new_contact]))
 	 end
 	end
 
 	describe(".find_contact") do
-	 it("will search to the class 'Contacts' to return a contact")do
-	  look_for_contact=Contacts.new(["Richard Rethemeyer"])
+	 it("will search to the class 'Contact' to return a contact")do
+	  look_for_contact=Contact.new(["Richard Rethemeyer"])
 	  look_for_contact.save()
-	  expect(Contacts.find_contact(look_for_contact.id())).to(eq(look_for_contact))
+	  expect(Contact.find_contact(look_for_contact.id())).to(eq(look_for_contact))
 	 end
 	end
 
 	describe(".all") do
 	 it("is empty at first") do
-		expect(Contacts.all()).to(eq([]))
+		expect(Contact.all()).to(eq([]))
 	 end
 	end
 
 	describe(".clear") do
 	 it("empties out all of the saved words") do
-	 	Contacts.new("Richard Rethemeyer").save()
-		Contacts.clear()
-		expect(Contacts.all()).to(eq([]))
+	 	Contact.new("Richard Rethemeyer").save()
+		Contact.clear()
+		expect(Contact.all()).to(eq([]))
 	 end
 	end
 

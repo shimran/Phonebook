@@ -1,5 +1,5 @@
 require('rspec')
-require('contacts')
+require('contact')
 require('phone')
 require('pry')
 
@@ -10,27 +10,27 @@ describe(Phone) do
 
   describe(:phone_number)	do
     it("returns a phone number")do
-    new_contact = Phone.new("Richard Rethemeyer","work","4159900464")
-    new_contact.save()
-    expect(new_contact.phone_number()).to(eq("4159900464"))
+     new_contact = Phone.new("Richard Rethemeyer","work","4159900464")
+     new_contact.save()
+     expect(new_contact.phone_number()).to(eq("4159900464"))
     end
   end
 
   describe(:name)	do
     it("returns a Contact name")do
-    new_contact = Phone.new("Richard Rethemeyer","work", "4159900464")
-    new_contact.save()
-    expect(new_contact.name()).to(eq("Richard Rethemeyer"))
+     new_contact = Phone.new("Richard Rethemeyer","work", "4159900464")
+     new_contact.save()
+     expect(new_contact.name()).to(eq("Richard Rethemeyer"))
     end
   end
 
   describe(:type)	do
     it("returns a Contact name")do
-    new_contact = Phone.new("Richard Rethemeyer","work", "4159900464")
-    new_contact.save()
-    expect(new_contact.type()).to(eq("work"))
+     new_contact = Phone.new("Richard Rethemeyer","work", "4159900464")
+     new_contact.save()
+     expect(new_contact.type()).to(eq("work"))
+    end
   end
-end
 
   describe(".find_contact") do
    it("will search to the class 'Phone' to return a contact")do

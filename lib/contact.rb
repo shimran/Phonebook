@@ -1,4 +1,4 @@
-class Contacts
+class Contact
 	@@contacts = []
 		define_method (:initialize) do |contact_name|
 			@contact_name = contact_name
